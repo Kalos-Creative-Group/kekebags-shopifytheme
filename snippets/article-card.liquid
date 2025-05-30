@@ -104,6 +104,9 @@
                 {%- endif -%}
               </div>
             {%- endif -%}
+            <a href="{{ article.url }}" class="full-unstyled-link bold">
+              Read more
+            </a>
           </div>
           {%- if show_badge -%}
             <div class="card__badge {{ settings.badge_position }}">
@@ -113,7 +116,7 @@
         </div>
       </div>
       <div class="card__content">
-        <div class="card__information">
+        <div class="card__information center">
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
@@ -143,6 +146,9 @@
               {%- endif -%}
             </div>
           {%- endif -%}
+          <a href="{{ article.url }}" class="full-unstyled-link bold">
+            Read more
+          </a>
         </div>
         {%- if show_badge -%}
           <div class="card__badge {{ settings.badge_position }}">
