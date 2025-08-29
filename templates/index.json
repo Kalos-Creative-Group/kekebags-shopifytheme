@@ -15,8 +15,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Goodbye, Screens.  Hello, Keke.",
-            "heading_size": "h0"
+            "heading": "Goodbye, Screens.  Hello, Keke."
           }
         },
         "text_ipcMDD": {
@@ -261,7 +260,7 @@
         "1656018827ee62daad-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/featured-1.png",
+            "image": "shopify://shop_images/featured-1_e0a43025-b9ec-4081-b922-4bab95869752.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -271,7 +270,7 @@
         "1656018827ee62daad-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/featured-8_a122f14e-effd-4ee9-97ed-72bce15a78eb.png",
+            "image": "shopify://shop_images/featured-8_29fb4efc-1046-4519-aee7-efb8380ef6ae.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -281,7 +280,7 @@
         "column_gPenJU": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/featured-3.png",
+            "image": "shopify://shop_images/featured-3_a1c56246-86c5-43e5-9a9b-4f67875b1ed6.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -291,7 +290,7 @@
         "column_hTcVXW": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/featured-9_563a516a-cc0e-461b-93d7-b599d566776c.png",
+            "image": "shopify://shop_images/featured-9_459ac077-54e8-473c-837c-5dc4ff6e95df.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -341,7 +340,7 @@
       "custom_css": [
         ".grid {justify-content: center;}",
         ".page-width {max-width: 100%;}",
-        "@media screen and (min-width: 990px) {.grid__item {width: auto !important; max-width: 200px !important;}}"
+        "@media screen and (min-width: 990px) {.grid__item {width: auto !important; max-width: 200px !important; }}"
       ],
       "settings": {
         "title": "As Mentioned In",
