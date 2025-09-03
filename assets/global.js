@@ -923,11 +923,13 @@ class LogoParadeComponent extends HTMLElement {
       
       // Calculate scroll distance based on time
       const scrollDistance = (this.scrollSpeed * deltaTime) / 1000;
-      this.currentPosition += scrollDistance;
+      const nextPosition = this.currentPosition + scrollDistance;
       
-      // Reset position for seamless loop
-      if (this.currentPosition >= this.totalScrollWidth) {
-        this.currentPosition = this.currentPosition % this.totalScrollWidth;
+      // Reset position BEFORE it would visually exceed bounds
+      if (nextPosition >= this.totalScrollWidth) {
+        this.currentPosition = nextPosition % this.totalScrollWidth;
+      } else {
+        this.currentPosition = nextPosition;
       }
       
       // Apply transform for smooth animation
