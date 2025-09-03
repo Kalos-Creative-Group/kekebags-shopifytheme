@@ -118,6 +118,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Labor Day Sale! For A Limited Time: Buy a past pouch bundle, Get one 50% off",
               "color_scheme": "accent-2",
