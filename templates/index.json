@@ -255,106 +255,67 @@
       }
     },
     "16560188270c4ceee8": {
-      "type": "multicolumn",
+      "type": "logo-parade",
       "blocks": {
-        "1656018827ee62daad-0": {
-          "type": "column",
+        "logo-0": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-1_e0a43025-b9ec-4081-b922-4bab95869752.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/featured-1_e0a43025-b9ec-4081-b922-4bab95869752.png"
           }
         },
-        "1656018827ee62daad-2": {
-          "type": "column",
+        "logo-1": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-8_29fb4efc-1046-4519-aee7-efb8380ef6ae.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/featured-8_29fb4efc-1046-4519-aee7-efb8380ef6ae.png"
           }
         },
-        "column_gPenJU": {
-          "type": "column",
+        "logo-2": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-3_a1c56246-86c5-43e5-9a9b-4f67875b1ed6.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/featured-3_a1c56246-86c5-43e5-9a9b-4f67875b1ed6.png"
           }
         },
-        "column_hTcVXW": {
-          "type": "column",
+        "logo-3": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-9_459ac077-54e8-473c-837c-5dc4ff6e95df.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/featured-9_459ac077-54e8-473c-837c-5dc4ff6e95df.png"
           }
         },
-        "column_jGgezP": {
-          "type": "column",
+        "logo-4": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-5.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/featured-5.png"
           }
         },
-        "column_zTwefG": {
-          "type": "column",
+        "logo-5": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-6.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/featured-6.png"
           }
         },
-        "column_87JA8g": {
-          "type": "column",
+        "logo-6": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/featured-7.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://kekekid.com/products/pouch-subscription?selling_plan=4201152535"
+            "image": "shopify://shop_images/featured-7.png"
           }
         }
       },
       "block_order": [
-        "1656018827ee62daad-0",
-        "1656018827ee62daad-2",
-        "column_gPenJU",
-        "column_hTcVXW",
-        "column_jGgezP",
-        "column_zTwefG",
-        "column_87JA8g"
-      ],
-      "custom_css": [
-        ".grid {justify-content: center;}",
-        ".page-width {max-width: 100%;}",
-        "@media screen and (min-width: 990px) {.grid__item {width: auto !important; max-width: 200px !important; }}"
+        "logo-0",
+        "logo-1",
+        "logo-2",
+        "logo-3",
+        "logo-4",
+        "logo-5",
+        "logo-6"
       ],
       "settings": {
         "title": "As Mentioned In",
         "heading_size": "h1",
-        "image_width": "full",
         "image_ratio": "logo",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "none",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }

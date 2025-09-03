@@ -1435,6 +1435,48 @@
         "name": "Image with text"
       }
     },
+    "logo-parade": {
+      "name": "Logo parade",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        },
+        "image_ratio": {
+          "label": "Image ratio",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Portrait"
+          },
+          "options__3": {
+            "label": "Square"
+          },
+          "options__4": {
+            "label": "Circle"
+          },
+          "options__5": {
+            "label": "Logo"
+          }
+        },
+        "button_label": {
+          "label": "Button label"
+        },
+        "button_link": {
+          "label": "Button link"
+        }
+      },
+      "blocks": {
+        "image": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+            }
+          }
+        }
+      }
+    },
     "main-article": {
       "name": "Blog post",
       "blocks": {

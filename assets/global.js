@@ -743,6 +743,264 @@ class SlideshowComponent extends SliderComponent {
 
 customElements.define('slideshow-component', SlideshowComponent);
 
+class LogoParadeComponent extends HTMLElement {
+  constructor() {
+    super();
+    this.slider = this.querySelector('[id^="Slider-"]');
+    this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
+    
+    if (!this.slider) return;
+    
+    // Configuration
+    this.scrollSpeed = parseFloat(this.dataset.scrollSpeed) || 50; // pixels per second
+    this.gap = parseFloat(this.dataset.gap) || 0; // gap between items
+    
+    // Breakpoint configuration based on slider classes
+    this.breakpointConfig = this.getBreakpointConfig();
+    
+    // Initialize if we have a breakpoint config
+    if (this.breakpointConfig) {
+      this.init();
+    }
+  }
+
+  getBreakpointConfig() {
+    if (this.slider.classList.contains('slider--mobile')) {
+      return { type: 'max', breakpoint: 749 };
+    } else if (this.slider.classList.contains('slider--tablet')) {
+      return { type: 'max', breakpoint: 989 };
+    } else if (this.slider.classList.contains('slider--tablet-up')) {
+      return { type: 'min', breakpoint: 750 };
+    } else if (this.slider.classList.contains('slider--desktop')) {
+      return { type: 'min', breakpoint: 990 };
+    }
+    return null;
+  }
+
+  init() {
+    // Store original styles
+    this.originalStyles = {
+      overflow: this.slider.style.overflow,
+      cursor: this.slider.style.cursor,
+      touchAction: this.slider.style.touchAction,
+      userSelect: this.slider.style.userSelect,
+      webkitUserSelect: this.slider.style.webkitUserSelect,
+      transform: this.slider.style.transform
+    };
+    
+    // Set up media query listener
+    const mediaQuery = this.breakpointConfig.type === 'max' 
+      ? `(max-width: ${this.breakpointConfig.breakpoint}px)`
+      : `(min-width: ${this.breakpointConfig.breakpoint}px)`;
+    
+    this.mediaQueryList = window.matchMedia(mediaQuery);
+    
+    // Check initial state
+    this.handleMediaQueryChange(this.mediaQueryList);
+    
+    // Listen for changes
+    this.mediaQueryList.addEventListener('change', this.handleMediaQueryChange.bind(this));
+    
+    // Handle visibility changes
+    document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
+    
+    // Handle resize
+    this.resizeObserver = new ResizeObserver(() => this.handleResize());
+    this.resizeObserver.observe(this.slider);
+  }
+
+  handleMediaQueryChange(mql) {
+    if (mql.matches) {
+      this.activate();
+    } else {
+      this.deactivate();
+    }
+  }
+
+  activate() {
+    if (this.isActive) return;
+    this.isActive = true;
+    
+    // Apply non-interactive styles
+    this.slider.style.overflow = 'visible';
+    this.slider.style.cursor = 'default';
+    this.slider.style.touchAction = 'none';
+    this.slider.style.userSelect = 'none';
+    this.slider.style.webkitUserSelect = 'none';
+    
+    // Bind preventDefault to maintain context
+    this.boundPreventDefault = this.preventDefault.bind(this);
+    
+    // Prevent all user input events
+    this.slider.addEventListener('touchstart', this.boundPreventDefault);
+    this.slider.addEventListener('touchmove', this.boundPreventDefault);
+    this.slider.addEventListener('touchend', this.boundPreventDefault);
+    this.slider.addEventListener('mousedown', this.boundPreventDefault);
+    this.slider.addEventListener('wheel', this.boundPreventDefault, { passive: false });
+    this.slider.addEventListener('keydown', this.boundPreventDefault);
+    
+    // Clone items for seamless loop
+    this.duplicateItems();
+    
+    // Start animation
+    this.startScrolling();
+  }
+
+  deactivate() {
+    if (!this.isActive) return;
+    this.isActive = false;
+    
+    // Stop animation
+    this.pause();
+    
+    // Remove clones
+    const clones = this.slider.querySelectorAll('[aria-hidden="true"]:not([id^="Slide-"])');
+    clones.forEach(clone => clone.remove());
+    
+    // Restore original styles
+    Object.keys(this.originalStyles).forEach(prop => {
+      this.slider.style[prop] = this.originalStyles[prop];
+    });
+    
+    // Remove event listeners
+    if (this.boundPreventDefault) {
+      this.slider.removeEventListener('touchstart', this.boundPreventDefault);
+      this.slider.removeEventListener('touchmove', this.boundPreventDefault);
+      this.slider.removeEventListener('touchend', this.boundPreventDefault);
+      this.slider.removeEventListener('mousedown', this.boundPreventDefault);
+      this.slider.removeEventListener('wheel', this.boundPreventDefault);
+      this.slider.removeEventListener('keydown', this.boundPreventDefault);
+    }
+  }
+
+  duplicateItems() {
+    // Remove any existing clones first
+    const existingClones = this.slider.querySelectorAll('[aria-hidden="true"]:not([id^="Slide-"])');
+    existingClones.forEach(clone => clone.remove());
+    
+    // Calculate total width of original items
+    let totalWidth = 0;
+    this.sliderItems.forEach(item => {
+      totalWidth += item.offsetWidth + this.gap;
+    });
+    
+    // Calculate how many sets we need to duplicate for smooth scrolling
+    const viewportWidth = this.slider.offsetWidth;
+    const setsNeeded = Math.ceil(viewportWidth / totalWidth) + 2;
+    
+    // Clone items multiple times
+    for (let i = 0; i < setsNeeded; i++) {
+      this.sliderItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.removeAttribute('id'); // Remove ID to avoid duplicates
+        this.slider.appendChild(clone);
+      });
+    }
+    
+    this.totalScrollWidth = totalWidth;
+  }
+
+  startScrolling() {
+    if (!this.isActive) return;
+    
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+    }
+    
+    this.lastTimestamp = null;
+    this.currentPosition = this.currentPosition || 0;
+    
+    const animate = (timestamp) => {
+      if (!this.isActive) return;
+      
+      if (!this.lastTimestamp) {
+        this.lastTimestamp = timestamp;
+      }
+      
+      const deltaTime = timestamp - this.lastTimestamp;
+      this.lastTimestamp = timestamp;
+      
+      // Calculate scroll distance based on time
+      const scrollDistance = (this.scrollSpeed * deltaTime) / 1000;
+      this.currentPosition += scrollDistance;
+      
+      // Reset position for seamless loop
+      if (this.currentPosition >= this.totalScrollWidth) {
+        this.currentPosition = this.currentPosition % this.totalScrollWidth;
+      }
+      
+      // Apply transform for smooth animation
+      this.slider.style.transform = `translateX(-${this.currentPosition}px)`;
+      
+      this.animationId = requestAnimationFrame(animate);
+    };
+    
+    this.animationId = requestAnimationFrame(animate);
+  }
+
+  preventDefault(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+
+  handleVisibilityChange() {
+    if (!this.isActive) return;
+    
+    if (document.hidden) {
+      this.pause();
+    } else {
+      this.resume();
+    }
+  }
+
+  pause() {
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
+  }
+
+  resume() {
+    if (!this.animationId && this.isActive) {
+      this.lastTimestamp = null;
+      this.startScrolling();
+    }
+  }
+
+  handleResize() {
+    if (!this.isActive) return;
+    
+    // Recalculate if needed
+    this.pause();
+    
+    // Remove clones
+    const clones = this.slider.querySelectorAll('[aria-hidden="true"]:not([id^="Slide-"])');
+    clones.forEach(clone => clone.remove());
+    
+    // Re-initialize
+    this.duplicateItems();
+    this.resume();
+  }
+
+  disconnectedCallback() {
+    this.deactivate();
+    
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+    }
+    
+    if (this.mediaQueryList) {
+      this.mediaQueryList.removeEventListener('change', this.handleMediaQueryChange);
+    }
+    
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
+  }
+}
+
+customElements.define('logo-parade', LogoParadeComponent);
+
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
