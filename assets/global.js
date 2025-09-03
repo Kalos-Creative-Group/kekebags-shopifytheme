@@ -827,6 +827,7 @@ class LogoParadeComponent extends HTMLElement {
     this.slider.style.touchAction = 'none';
     this.slider.style.userSelect = 'none';
     this.slider.style.webkitUserSelect = 'none';
+    this.slider.style.gap = `${this.gap}px`;
     
     // Bind preventDefault to maintain context
     this.boundPreventDefault = this.preventDefault.bind(this);
@@ -923,13 +924,11 @@ class LogoParadeComponent extends HTMLElement {
       
       // Calculate scroll distance based on time
       const scrollDistance = (this.scrollSpeed * deltaTime) / 1000;
-      const nextPosition = this.currentPosition + scrollDistance;
-      
-      // Reset position BEFORE it would visually exceed bounds
-      if (nextPosition >= this.totalScrollWidth) {
-        this.currentPosition = nextPosition % this.totalScrollWidth;
-      } else {
-        this.currentPosition = nextPosition;
+      this.currentPosition += scrollDistance;
+
+      // Reset position for seamless loop
+      if (this.currentPosition >= this.totalScrollWidth) {
+        this.currentPosition = (this.currentPosition % this.totalScrollWidth) + (this.scrollSpeed / 20);
       }
       
       // Apply transform for smooth animation
