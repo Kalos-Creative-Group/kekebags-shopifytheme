@@ -1,0 +1,15 @@
+{% comment %}
+    Renders the product rating widget from judge.me
+
+    Accepts:
+    - product: {Object} Product Liquid object (optional)
+
+    Usage:
+    {% render 'judgeme-rating', product: product %}
+{% endcomment %}
+
+<!-- Start of Judge.me code -->
+<div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+    {{ product.metafields.judgeme.badge }}
+</div>
+<!-- End of Judge.me code -->
