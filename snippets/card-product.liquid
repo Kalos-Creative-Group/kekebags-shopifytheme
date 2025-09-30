@@ -116,7 +116,7 @@
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
             {%- if show_rating -%}
-              {% render 'judgeme-rating' %}
+              {% render 'judgeme-rating', product: card_product  %}
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '' %}
@@ -231,7 +231,7 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {%- if show_rating -%}
-              {% render 'judgeme-rating' %}
+              {% render 'judgeme-rating'  %}
             {%- endif -%}
             {% render 'price' %}
           </div>
