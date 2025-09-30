@@ -167,59 +167,6 @@
         "padding_bottom": 56
       }
     },
-    "16573118937b6c103c": {
-      "type": "multicolumn",
-      "blocks": {
-        "16573118930f6bd28d-0": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p>“We will never travel to a restaurant, doctor’s office, airport, etc without them again! I promise you’ll enjoy traveling & dinners out with your family way more once you have this tool to keep your kids engaged!”</p><p><strong>- Sara M.</strong></p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "16573118930f6bd28d-1": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p>“We keep our Keke bags by the front door and as we are walking out the door we find ourselves asking if we have our keys, phone, and our Keke bags- all essentials in our mind before going anywhere with the kids.”</p><p><strong>- Mike S.</strong></p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "16573118930f6bd28d-2": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p>“The Keke subscription is a game-changer! We swap the pouches in and out so our son is never bored. We love that we don’t have to worry about being prepared- the Keke bag makes us feel like parents who always have it together! HA!”</p><p><strong>- Joanna W.</strong></p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "16573118930f6bd28d-0",
-        "16573118930f6bd28d-1",
-        "16573118930f6bd28d-2"
-      ],
-      "settings": {
-        "title": "The Reviews Are In!",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 56,
-        "padding_bottom": 56
-      }
-    },
     "17592479335111390d": {
       "type": "apps",
       "blocks": {
@@ -242,7 +189,6 @@
   "order": [
     "main",
     "165731160638682d15",
-    "16573118937b6c103c",
     "17592479335111390d"
   ]
 }
