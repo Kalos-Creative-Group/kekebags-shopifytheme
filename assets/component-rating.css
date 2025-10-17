@@ -58,3 +58,26 @@
     display: block;
   }
 }
+
+.jdgm-widget:has([data-number-of-reviews="0"]),
+.jdgm-widget:has([data-number-of-reviews="1"]),
+.jdgm-widget:has([data-number-of-reviews="2"]),
+.jdgm-widget:has([data-number-of-reviews="3"]),
+.jdgm-widget:has([data-number-of-reviews="4"]),
+.jdgm-widget:has([data-number-of-reviews="5"]),
+.jdgm-widget:has([data-number-of-reviews="6"]),
+.jdgm-widget:has([data-number-of-reviews="7"]),
+.jdgm-widget:has([data-number-of-reviews="8"]),
+.jdgm-widget:has([data-number-of-reviews="9"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="0"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="1"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="2"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="3"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="4"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="5"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="6"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="7"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="8"]),
+.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="9"]) {
+  display: none !important;
+}
