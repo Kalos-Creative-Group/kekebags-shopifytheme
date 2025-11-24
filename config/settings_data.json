@@ -116,6 +116,14 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_BBxchL": {
+            "type": "announcement",
+            "settings": {
+              "text": "20% off Keke Activity Bags! This week only. Happy Shopping :)",
+              "color_scheme": "accent-1",
+              "link": "shopify://products/the-keke-bag"
+            }
+          },
           "announcement-bar-0": {
             "type": "announcement",
             "disabled": true,
@@ -145,6 +153,7 @@
           }
         },
         "block_order": [
+          "announcement_BBxchL",
           "announcement-bar-0",
           "acf31799-362f-4586-9c77-ecffc6e9fc14",
           "announcement_yip7kq"
