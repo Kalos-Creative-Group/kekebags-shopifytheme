@@ -119,7 +119,7 @@
           "announcement_BBxchL": {
             "type": "announcement",
             "settings": {
-              "text": "20% off Keke Activity Bags! This week only. Happy Shopping :)",
+              "text": "20% off Keke Activity Bags! This week only. No code needed!",
               "color_scheme": "accent-1",
               "link": "shopify://products/the-keke-bag"
             }
@@ -131,15 +131,6 @@
               "text": "Labor Day Sale! For A Limited Time: Buy a past pouch bundle, Get one 50% off",
               "color_scheme": "accent-2",
               "link": "shopify://products/past-pouch-subscriptions"
-            }
-          },
-          "acf31799-362f-4586-9c77-ecffc6e9fc14": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "use code MERRYMERRY15 at check out for 15% off site wide!*",
-              "color_scheme": "accent-1",
-              "link": ""
             }
           },
           "announcement_yip7kq": {
@@ -155,7 +146,6 @@
         "block_order": [
           "announcement_BBxchL",
           "announcement-bar-0",
-          "acf31799-362f-4586-9c77-ecffc6e9fc14",
           "announcement_yip7kq"
         ],
         "settings": {}
