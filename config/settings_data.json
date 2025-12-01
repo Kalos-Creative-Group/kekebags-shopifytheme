@@ -121,7 +121,7 @@
             "settings": {
               "text": "20% off. No code needed! 'Tis the Season of Gifting!",
               "color_scheme": "accent-1",
-              "link": "shopify://collections"
+              "link": "shopify://collections/all"
             }
           },
           "announcement-bar-0": {
