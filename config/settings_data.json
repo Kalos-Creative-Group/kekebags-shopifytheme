@@ -119,9 +119,9 @@
           "announcement_BBxchL": {
             "type": "announcement",
             "settings": {
-              "text": "20% off Keke Activity Bags! This week only. No code needed!",
+              "text": "20% off. No code needed! 'Tis the Season of Gifting!",
               "color_scheme": "accent-1",
-              "link": "shopify://products/the-keke-bag"
+              "link": "shopify://collections"
             }
           },
           "announcement-bar-0": {
