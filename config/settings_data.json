@@ -119,7 +119,7 @@
           "announcement_BBxchL": {
             "type": "announcement",
             "settings": {
-              "text": "20% off site wide! Thank you for shopping small this season. No code needed!",
+              "text": "20% off site wide! No code needed. Thank you for shopping small this season.",
               "color_scheme": "accent-1",
               "link": "shopify://collections/the-keke-bag"
             }
