@@ -431,12 +431,5 @@
       "copy_code_success": "Code copied successfully",
       "print_gift_card": "Print"
     }
-  },
-  "shopify": {
-    "checkout": {
-      "general": {
-        "continue_to_shipping_method": "*Orders placed between now and Jan 1st, will not ship out until Jan 2nd*"
-      }
-    }
   }
 }
