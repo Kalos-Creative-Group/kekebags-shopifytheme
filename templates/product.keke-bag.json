@@ -53,6 +53,10 @@
             "show_dynamic_checkout": true
           }
         },
+        "bisell_upsell_bf_upsell_widget_bl_gNhjAW": {
+          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-bl/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+          "settings": {}
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -88,6 +92,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "bisell_upsell_bf_upsell_widget_bl_gNhjAW",
         "description",
         "03e91a68-839c-47d7-bac5-64ab60e26ff9",
         "d41186a0-b170-43db-ac2f-5ba91ee185e8",
@@ -174,7 +179,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "real_data",
-            "max_width": 1200
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
