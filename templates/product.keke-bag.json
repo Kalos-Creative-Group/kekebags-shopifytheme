@@ -40,18 +40,12 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown"
+            "picker_type": "button"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
         },
         "ez_preorder_notify_me_aqbER9": {
           "type": "shopify://apps/ez-preorder/blocks/notify-me/27f5c03b-584b-4f19-8dc2-99bf52c8c09f",
@@ -65,11 +59,17 @@
             "button_font_size": 16,
             "button_font_weight": 400,
             "popup_title": "Notify me when available",
-            "popup_background_color": "#04b48e",
+            "popup_background_color": "#ffffff",
             "popup_text_color": "#000000",
             "submit_button_color": "#04b48e",
             "submit_button_text_color": "#000000",
             "submit_button_text": "Submit"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
           }
         },
         "description": {
@@ -106,8 +106,8 @@
         "c19ac9de-23ee-416a-aed2-704c15fe622d",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
         "ez_preorder_notify_me_aqbER9",
+        "buy_buttons",
         "description",
         "03e91a68-839c-47d7-bac5-64ab60e26ff9",
         "d41186a0-b170-43db-ac2f-5ba91ee185e8",
