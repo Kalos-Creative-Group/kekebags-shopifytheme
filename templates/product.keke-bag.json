@@ -31,12 +31,6 @@
           "type": "price",
           "settings": {}
         },
-        "c19ac9de-23ee-416a-aed2-704c15fe622d": {
-          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {
-            "product": "the-keke-bag"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -86,7 +80,7 @@
         "d41186a0-b170-43db-ac2f-5ba91ee185e8": {
           "type": "text",
           "settings": {
-            "text": "<p>Dimensions of bag: 9 x 10 inches, 3.5 inches thick</p>",
+            "text": "<p>Dimensions of bag: 9 x 10 inches, 3.5 inches thick. Pouch dimensions inside of bag: 5.5 inches wide to about 7.5 inches long.</p>",
             "text_style": "body"
           }
         },
@@ -103,7 +97,6 @@
         "caption",
         "judge_me_reviews_preview_badge_AfhJ6A",
         "price",
-        "c19ac9de-23ee-416a-aed2-704c15fe622d",
         "variant_picker",
         "quantity_selector",
         "ez_preorder_notify_me_ekCqRm",
