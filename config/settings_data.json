@@ -248,6 +248,11 @@
         "type": "shopify://apps/bisell-upsell/blocks/app-embed/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
         "disabled": true,
         "settings": {}
+      },
+      "16987187365865460165": {
+        "type": "shopify://apps/ez-preorder/blocks/pre-order/27f5c03b-584b-4f19-8dc2-99bf52c8c09f",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
