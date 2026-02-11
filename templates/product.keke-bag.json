@@ -47,25 +47,6 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "ez_preorder_notify_me_aqbER9": {
-          "type": "shopify://apps/ez-preorder/blocks/notify-me/27f5c03b-584b-4f19-8dc2-99bf52c8c09f",
-          "settings": {
-            "button_text": "Notify me when back in stock",
-            "button_color": "#04b48e",
-            "button_text_color": "#ffffff",
-            "button_border_color": "#04b48e",
-            "button_border_width": 1,
-            "button_border_radius": 0,
-            "button_font_size": 16,
-            "button_font_weight": 400,
-            "popup_title": "Notify me when available",
-            "popup_background_color": "#ffffff",
-            "popup_text_color": "#000000",
-            "submit_button_color": "#04b48e",
-            "submit_button_text_color": "#ffffff",
-            "submit_button_text": "Submit"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -96,6 +77,25 @@
             "text": "<p>Read our Terms & Conditions <a href=\"/pages/privacy-policy\" title=\"Privacy Policy & Disclaimer\">here</a></p>",
             "text_style": "body"
           }
+        },
+        "ez_preorder_notify_me_ekCqRm": {
+          "type": "shopify://apps/ez-preorder/blocks/notify-me/27f5c03b-584b-4f19-8dc2-99bf52c8c09f",
+          "settings": {
+            "button_text": "Notify me when back in stock",
+            "button_color": "#04b48e",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#04b48e",
+            "button_border_width": 1,
+            "button_border_radius": 0,
+            "button_font_size": 16,
+            "button_font_weight": 400,
+            "popup_title": "Notify me when back in stock",
+            "popup_background_color": "#ffffff",
+            "popup_text_color": "#ffffff",
+            "submit_button_color": "#04b48e",
+            "submit_button_text_color": "#ffffff",
+            "submit_button_text": "Submit"
+          }
         }
       },
       "block_order": [
@@ -106,12 +106,12 @@
         "c19ac9de-23ee-416a-aed2-704c15fe622d",
         "variant_picker",
         "quantity_selector",
-        "ez_preorder_notify_me_aqbER9",
         "buy_buttons",
         "description",
         "03e91a68-839c-47d7-bac5-64ab60e26ff9",
         "d41186a0-b170-43db-ac2f-5ba91ee185e8",
-        "a5ac5251-aeca-420d-bb27-a854dc52a707"
+        "a5ac5251-aeca-420d-bb27-a854dc52a707",
+        "ez_preorder_notify_me_ekCqRm"
       ],
       "settings": {
         "enable_sticky_info": true,
