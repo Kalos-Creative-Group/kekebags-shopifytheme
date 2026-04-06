@@ -116,6 +116,14 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_HhpYnJ": {
+            "type": "announcement",
+            "settings": {
+              "text": "Our Warehouse SALE is here! With limited quantities of perfectly imperfect products!",
+              "color_scheme": "accent-1",
+              "link": ""
+            }
+          },
           "announcement_BBxchL": {
             "type": "announcement",
             "disabled": true,
@@ -145,6 +153,7 @@
           }
         },
         "block_order": [
+          "announcement_HhpYnJ",
           "announcement_BBxchL",
           "announcement-bar-0",
           "announcement_yip7kq"
