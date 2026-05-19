@@ -118,6 +118,7 @@
         "blocks": {
           "announcement_HhpYnJ": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "LAST CALL! Warehouse sale is almost sold out!",
               "color_scheme": "accent-1",
