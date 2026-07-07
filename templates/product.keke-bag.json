@@ -41,10 +41,6 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "bisell_upsell_bf_upsell_widget_pal_mgTPqL": {
-          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-pal/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
-          "settings": {}
-        },
         "bisell_upsell_bf_upsell_widget_bl_gNhjAW": {
           "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-bl/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
           "settings": {}
@@ -88,7 +84,6 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "bisell_upsell_bf_upsell_widget_pal_mgTPqL",
         "bisell_upsell_bf_upsell_widget_bl_gNhjAW",
         "buy_buttons",
         "description",
