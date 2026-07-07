@@ -100,6 +100,9 @@
         "d41186a0-b170-43db-ac2f-5ba91ee185e8",
         "a5ac5251-aeca-420d-bb27-a854dc52a707"
       ],
+      "custom_css": [
+        ".product__text.caption-with-letter-spacing {text-align: center; font-size: 1.5rem;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "gallery_layout": "thumbnail",
