@@ -51,8 +51,8 @@
           "type": "text",
           "name": "OR",
           "settings": {
-            "text": "<p>OR</p>",
-            "text_style": "body"
+            "text": "<p>or</p>",
+            "text_style": "uppercase"
           }
         },
         "bisell_upsell_bf_upsell_widget_bl_gNhjAW": {
