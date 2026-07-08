@@ -1,1 +1,30 @@
-{"sections":{"main":{"type":"main-list-collections","settings":{"title":"Collections","sort":"alphabetical","image_ratio":"square","columns_desktop":2,"columns_mobile":"2"}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured": {
+          "type": "featured",
+          "settings": {
+            "button_label": "Shop Now",
+            "show_product_info": true
+          }
+        },
+        "row-1": {
+          "type": "collection",
+          "settings": {}
+        },
+        "row-2": {
+          "type": "collection",
+          "settings": {}
+        }
+      },
+      "block_order": ["featured", "row-1", "row-2"],
+      "settings": {
+        "title": "Collections",
+        "image_ratio": "square"
+      }
+    }
+  },
+  "order": ["main"]
+}
