@@ -17,9 +17,9 @@
           "settings": {
             "collection": "the-keke-bag",
             "heading": "",
-            "product": "",
+            "product": "the-keke-bag",
             "button_label": "Shop Now",
-            "show_product_info": true
+            "show_product_info": false
           }
         },
         "row-1": {
