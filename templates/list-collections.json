@@ -15,7 +15,7 @@
         "featured": {
           "type": "featured",
           "settings": {
-            "collection": "the-keke-bag",
+            "collection": "the-keke-bag-1",
             "heading": "",
             "product": "",
             "button_label": "Shop Now",
@@ -25,14 +25,14 @@
         "row-1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "subscription",
             "heading": ""
           }
         },
         "row-2": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "add-on-activity-bundles",
             "heading": ""
           }
         }
