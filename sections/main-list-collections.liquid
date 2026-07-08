@@ -1,28 +1,172 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
-  <h1 class="title title--primary center">{{ section.settings.title | escape }}</h1>
-  {%- liquid
-    case section.settings.sort
-      when 'products_high' or 'products_low'
-        assign collections = collections | sort: 'all_products_count'
-      when 'date' or 'date_reversed'
-        assign collections = collections | sort: 'published_at'
-    endcase
+{%- style -%}
+  #shopify-section-{{ section.id }} .collections-page__section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+  }
 
-    if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-      assign collections = collections | reverse
+  #shopify-section-{{ section.id }} .collections-page__section--first {
+    margin-top: 1.5rem;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  #shopify-section-{{ section.id }} .collections-row__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  #shopify-section-{{ section.id }} .collections-row__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 1.2rem;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .collections-row__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .collections-row__divider {
+    display: inline-block;
+    width: 4rem;
+    height: 2px;
+    background: rgba(var(--color-foreground), 0.35);
+  }
+
+  #shopify-section-{{ section.id }} .collections-featured__grid {
+    max-width: 62rem;
+    margin-inline: auto;
+  }
+
+  #shopify-section-{{ section.id }} .collections-featured__cta {
+    margin-top: 2.4rem;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .collections-featured__product-title {
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 0 0 0.4rem;
+  }
+
+  #shopify-section-{{ section.id }} .collections-featured__cta .price {
+    justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+
+  #shopify-section-{{ section.id }} .collections-featured__cta .button {
+    min-width: 14rem;
+  }
+
+  #shopify-section-{{ section.id }} .collections-empty {
+    text-align: center;
+    padding: 4rem 0;
+  }
+{%- endstyle -%}
+
+<div class="page-width collections-page">
+  {%- if section.settings.title != blank -%}
+    <h1 class="title title--primary center">{{ section.settings.title | escape }}</h1>
+  {%- endif -%}
+
+  {%- liquid
+    assign card_extra = ''
+    if settings.card_style == 'standard'
+      assign card_extra = ' contains-card--standard'
     endif
   -%}
-  <ul class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
-    {%- for collection in collections -%}
-      <li class="collection-list__item grid__item">
-        {% render 'card-collection', card_collection: collection, media_aspect_ratio: section.settings.image_ratio, columns: 3 %}
-      </li>
-    {%- endfor -%}
-  </ul>
+
+  {%- for block in section.blocks -%}
+    {%- assign row_collection = block.settings.collection -%}
+    {%- assign first_class = '' -%}
+    {%- if forloop.first -%}
+      {%- assign first_class = ' collections-page__section--first' -%}
+    {%- endif -%}
+
+    {%- case block.type -%}
+      {%- when 'featured' -%}
+        {%- if row_collection != blank -%}
+          <section class="collections-page__section collections-page__section--featured{{ first_class }}" {{ block.shopify_attributes }}>
+            <div class="collections-row__header">
+              <h2 class="collections-row__title">{{ block.settings.heading | default: row_collection.title | escape }}</h2>
+              <span class="collections-row__divider"></span>
+            </div>
+
+            <ul class="grid product-grid contains-card{{ card_extra }} grid--2-col-desktop grid--2-col-tablet-down collections-featured__grid" role="list">
+              {%- for product in row_collection.products limit: 2 -%}
+                <li class="grid__item">
+                  {% render 'card-product',
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    section_id: section.id
+                  %}
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- assign featured_product = block.settings.product -%}
+            {%- if featured_product != blank -%}
+              <div class="collections-featured__cta">
+                {%- if block.settings.show_product_info -%}
+                  <p class="collections-featured__product-title">{{ featured_product.title | escape }}</p>
+                  {% render 'price', product: featured_product, price_class: '' %}
+                {%- endif -%}
+                <a href="{{ featured_product.url }}" class="button">
+                  {{ block.settings.button_label | default: 'Shop Now' | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </section>
+        {%- endif -%}
+
+      {%- when 'collection' -%}
+        {%- assign total_products = row_collection.all_products_count -%}
+        {%- if row_collection != blank and total_products > 0 -%}
+          {%- liquid
+            assign cols_desktop = 4
+            if total_products < 4
+              assign cols_desktop = total_products
+            endif
+            assign cols_mobile = 2
+            if total_products < 2
+              assign cols_mobile = 1
+            endif
+          -%}
+          <section class="collections-page__section collections-page__section--row{{ first_class }}" {{ block.shopify_attributes }}>
+            <div class="collections-row__header">
+              <h2 class="collections-row__title">
+                <a href="{{ row_collection.url }}">{{ block.settings.heading | default: row_collection.title | escape }}</a>
+              </h2>
+              <span class="collections-row__divider"></span>
+            </div>
+
+            <ul class="grid product-grid contains-card{{ card_extra }} grid--{{ cols_desktop }}-col-desktop grid--{{ cols_mobile }}-col-tablet-down" role="list">
+              {%- for product in row_collection.products limit: cols_desktop -%}
+                <li class="grid__item">
+                  {% render 'card-product',
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    section_id: section.id
+                  %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </section>
+        {%- endif -%}
+    {%- endcase -%}
+  {%- else -%}
+    <p class="collections-empty">Add collection rows in the theme editor to get started.</p>
+  {%- endfor -%}
 </div>
+
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",
@@ -33,38 +177,6 @@
       "id": "title",
       "label": "t:sections.main-list-collections.settings.title.label",
       "default": "Collections"
-    },
-    {
-      "type": "select",
-      "id": "sort",
-      "options": [
-        {
-          "value": "alphabetical",
-          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
-        },
-        {
-          "value": "alphabetical_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
-        },
-        {
-          "value": "date_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
-        },
-        {
-          "value": "date",
-          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
-        },
-        {
-          "value": "products_high",
-          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
-        },
-        {
-          "value": "products_low",
-          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
-        }
-      ],
-      "default": "alphabetical",
-      "label": "t:sections.main-list-collections.settings.sort.label"
     },
     {
       "type": "select",
@@ -83,38 +195,85 @@
           "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
         }
       ],
-      "default": "adapt",
+      "default": "square",
       "label": "t:sections.main-list-collections.settings.image_ratio.label",
       "info": "t:sections.main-list-collections.settings.image_ratio.info"
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-list-collections.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "options": [
+      "type": "featured",
+      "name": "Featured collection",
+      "limit": 1,
+      "settings": [
         {
-          "value": "1",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
+          "type": "paragraph",
+          "content": "Shown on top with two products per row and a Shop Now button."
         },
         {
-          "value": "2",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Leave blank to use the collection title."
+        },
+        {
+          "type": "header",
+          "content": "Shop Now button"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Linked product"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_product_info",
+          "label": "Show linked product title and price",
+          "default": true
         }
-      ],
-      "default": "2",
-      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Collection row",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shows up to 4 products. Fewer than 4 products shrinks the column count to match."
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Leave blank to use the collection title."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.main-list-collections.name",
+      "blocks": [
+        { "type": "featured" },
+        { "type": "collection" },
+        { "type": "collection" }
+      ]
     }
   ]
 }
