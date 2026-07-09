@@ -26,14 +26,18 @@
           "type": "collection",
           "settings": {
             "collection": "subscription",
-            "heading": ""
+            "heading": "",
+            "columns_desktop": 3,
+            "justify": "center"
           }
         },
         "row-2": {
           "type": "collection",
           "settings": {
             "collection": "add-on-activity-bundles",
-            "heading": ""
+            "heading": "",
+            "columns_desktop": 3,
+            "justify": "left"
           }
         }
       },
