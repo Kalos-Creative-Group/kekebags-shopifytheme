@@ -52,6 +52,10 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "bisell_upsell_bf_upsell_widget_pal_TirFy4": {
+          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-pal/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+          "settings": {}
         }
       },
       "block_order": [
@@ -62,7 +66,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "bisell_upsell_bf_upsell_widget_pal_TirFy4"
       ],
       "settings": {
         "enable_sticky_info": true,
