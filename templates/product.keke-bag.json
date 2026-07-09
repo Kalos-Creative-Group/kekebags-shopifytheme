@@ -41,23 +41,15 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "bisell_upsell_bf_upsell_widget_pal_LMiRp8": {
+          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-pal/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
           }
-        },
-        "text_nkXLM9": {
-          "type": "text",
-          "name": "OR",
-          "settings": {
-            "text": "<p>or</p>",
-            "text_style": "uppercase"
-          }
-        },
-        "bisell_upsell_bf_upsell_widget_bl_gNhjAW": {
-          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-bl/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
-          "settings": {}
         },
         "description": {
           "type": "description",
@@ -92,9 +84,8 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "bisell_upsell_bf_upsell_widget_pal_LMiRp8",
         "buy_buttons",
-        "text_nkXLM9",
-        "bisell_upsell_bf_upsell_widget_bl_gNhjAW",
         "description",
         "03e91a68-839c-47d7-bac5-64ab60e26ff9",
         "d41186a0-b170-43db-ac2f-5ba91ee185e8",
