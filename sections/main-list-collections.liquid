@@ -66,6 +66,18 @@
     min-width: 14rem;
   }
 
+  #shopify-section-{{ section.id }} .collections-row__grid--left {
+    justify-content: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .collections-row__grid--center {
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .collections-row__grid--right {
+    justify-content: flex-end;
+  }
+
   #shopify-section-{{ section.id }} .collections-empty {
     text-align: center;
     padding: 4rem 0;
@@ -135,8 +147,8 @@
             if total_products < 6
               assign products_limit = total_products
             endif
-            assign cols_desktop = 3
-            if total_products < 3
+            assign cols_desktop = block.settings.columns_desktop | default: 3
+            if total_products < cols_desktop
               assign cols_desktop = total_products
             endif
             assign cols_mobile = 2
@@ -152,7 +164,7 @@
               <span class="collections-row__divider"></span>
             </div>
 
-            <ul class="grid product-grid contains-card{{ card_extra }} grid--{{ cols_desktop }}-col-desktop grid--{{ cols_mobile }}-col-tablet-down" role="list">
+            <ul class="grid product-grid contains-card{{ card_extra }} grid--{{ cols_desktop }}-col-desktop grid--{{ cols_mobile }}-col-tablet-down collections-row__grid--{{ block.settings.justify }}" role="list">
               {%- for product in row_collection.products limit: products_limit -%}
                 <li class="grid__item">
                   {% render 'card-product',
@@ -254,7 +266,7 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Shows up to 6 products, 3 per row. Fewer than 3 products shrinks the column count to match."
+          "content": "Shows up to 6 products. Fewer products than the column count shrinks the row to match."
         },
         {
           "type": "collection",
@@ -266,6 +278,26 @@
           "id": "heading",
           "label": "Heading",
           "info": "Leave blank to use the collection title."
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "min": 2,
+          "max": 4,
+          "step": 1,
+          "default": 3,
+          "label": "Products per row (desktop)"
+        },
+        {
+          "type": "select",
+          "id": "justify",
+          "label": "Product alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
         }
       ]
     }
