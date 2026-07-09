@@ -148,9 +148,6 @@
               assign products_limit = total_products
             endif
             assign cols_desktop = block.settings.columns_desktop | default: 3
-            if total_products < cols_desktop
-              assign cols_desktop = total_products
-            endif
             assign cols_mobile = 2
             if total_products < 2
               assign cols_mobile = 1
@@ -266,7 +263,7 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Shows up to 6 products. Fewer products than the column count shrinks the row to match."
+          "content": "Shows up to 6 products at the selected products-per-row. Rows with fewer products are positioned using the alignment setting."
         },
         {
           "type": "collection",
