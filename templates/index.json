@@ -32,7 +32,7 @@
             "button_link_1": "",
             "button_style_secondary_1": false,
             "button_label_2": "Shop Keke",
-            "button_link_2": "shopify://collections/the-keke-bag",
+            "button_link_2": "shopify://collections/the-keke-bag-legacy",
             "button_style_secondary_2": false
           }
         }
@@ -202,7 +202,7 @@
           "type": "button",
           "settings": {
             "button_label": "Grab & Go",
-            "button_link": "shopify://collections/the-keke-bag",
+            "button_link": "shopify://collections/the-keke-bag-legacy",
             "button_style_secondary": false
           }
         }
@@ -239,7 +239,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Keke",
-            "button_link": "shopify://collections/the-keke-bag",
+            "button_link": "shopify://collections/the-keke-bag-legacy",
             "button_style_secondary": false
           }
         }
