@@ -202,7 +202,7 @@
           "type": "button",
           "settings": {
             "button_label": "Grab & Go",
-            "button_link": "shopify://collections/the-keke-bag",
+            "button_link": "shopify://collections/the-keke-bag-legacy",
             "button_style_secondary": false
           }
         }
@@ -239,7 +239,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Keke",
-            "button_link": "shopify://collections/the-keke-bag",
+            "button_link": "shopify://collections/the-keke-bag-legacy",
             "button_style_secondary": false
           }
         }
