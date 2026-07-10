@@ -15,7 +15,7 @@
         "featured": {
           "type": "featured",
           "settings": {
-            "collection": "the-keke-bag",
+            "collection": "the-keke-bag-legacy",
             "heading": "",
             "product": "the-keke-bag",
             "button_label": "Shop Now",
