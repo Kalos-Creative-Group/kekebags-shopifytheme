@@ -116,6 +116,15 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_BBxchL": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "OUR SUMMER SALE IS HERE! 20% off sitewide! No code needed!",
+              "color_scheme": "accent-1",
+              "link": "https://kekekid.com/collections"
+            }
+          },
           "announcement_HhpYnJ": {
             "type": "announcement",
             "disabled": true,
@@ -123,15 +132,6 @@
               "text": "LAST CALL! Warehouse sale is almost sold out!",
               "color_scheme": "accent-1",
               "link": "shopify://collections/warehouse-sale-spring-cleaning"
-            }
-          },
-          "announcement_BBxchL": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "SUMMER SALE IS HERE! 20% off sitewide! No code needed!",
-              "color_scheme": "accent-1",
-              "link": "https://kekekid.com/collections"
             }
           },
           "announcement-bar-0": {
@@ -154,8 +154,8 @@
           }
         },
         "block_order": [
-          "announcement_HhpYnJ",
           "announcement_BBxchL",
+          "announcement_HhpYnJ",
           "announcement-bar-0",
           "announcement_yip7kq"
         ],
