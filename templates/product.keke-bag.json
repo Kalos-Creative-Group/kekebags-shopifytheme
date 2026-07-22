@@ -41,10 +41,6 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "bisell_upsell_bf_upsell_widget_pal_LMiRp8": {
-          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-pal/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -55,12 +51,9 @@
           "type": "description",
           "settings": {}
         },
-        "03e91a68-839c-47d7-bac5-64ab60e26ff9": {
-          "type": "text",
-          "settings": {
-            "text": "<p><a href=\"/products/pouch-subscription\" target=\"_blank\" title=\"Pouch Subscription\"><strong>Click here to add on our pouch subscription.</strong></a><strong> </strong>Our subscription service delivers 3 new pouches plus a loose creative activity to your door every 12 weeks! </p>",
-            "text_style": "body"
-          }
+        "bisell_upsell_bf_upsell_widget_pal_LMiRp8": {
+          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-pal/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+          "settings": {}
         },
         "d41186a0-b170-43db-ac2f-5ba91ee185e8": {
           "type": "text",
@@ -84,10 +77,9 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "bisell_upsell_bf_upsell_widget_pal_LMiRp8",
         "buy_buttons",
         "description",
-        "03e91a68-839c-47d7-bac5-64ab60e26ff9",
+        "bisell_upsell_bf_upsell_widget_pal_LMiRp8",
         "d41186a0-b170-43db-ac2f-5ba91ee185e8",
         "a5ac5251-aeca-420d-bb27-a854dc52a707"
       ],
