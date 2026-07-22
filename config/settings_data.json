@@ -120,8 +120,8 @@
             "type": "announcement",
             "settings": {
               "text": "☀️ OUR SUMMER SALE IS HERE! 20% off sitewide! No code needed! ☀️⛱️",
-              "color_scheme": "accent-1",
-              "link": "https://kekekid.com/collections"
+              "color_scheme": "accent-2",
+              "link": "shopify://collections"
             }
           },
           "announcement_HhpYnJ": {
