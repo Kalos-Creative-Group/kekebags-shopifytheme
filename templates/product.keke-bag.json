@@ -174,11 +174,18 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1784746320d1a6d01c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "165731160638682d15",
-    "17592479335111390d"
+    "17592479335111390d",
+    "1784746320d1a6d01c"
   ]
 }
