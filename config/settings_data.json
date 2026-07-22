@@ -451,5 +451,11 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "/* Bigger announcement text */.announcement-bar__message {font-size: 18px;}",
+      "/* Taller announcement bar */.announcement-bar__announcement,.announcement-bar__link {padding-top: 18px; padding-bottom: 18px;}"
+    ]
   }
 }
