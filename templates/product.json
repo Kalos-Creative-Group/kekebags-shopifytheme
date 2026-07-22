@@ -56,6 +56,10 @@
         "bisell_upsell_bf_upsell_widget_bl_RMH8rg": {
           "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-bl/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
           "settings": {}
+        },
+        "bisell_upsell_bf_upsell_widget_pal_hFyMT8": {
+          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-pal/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+          "settings": {}
         }
       },
       "block_order": [
@@ -67,7 +71,8 @@
         "buy_buttons",
         "description",
         "share",
-        "bisell_upsell_bf_upsell_widget_bl_RMH8rg"
+        "bisell_upsell_bf_upsell_widget_bl_RMH8rg",
+        "bisell_upsell_bf_upsell_widget_pal_hFyMT8"
       ],
       "settings": {
         "enable_sticky_info": true,
