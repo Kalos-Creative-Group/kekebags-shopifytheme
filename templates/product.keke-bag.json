@@ -47,6 +47,12 @@
             "show_dynamic_checkout": false
           }
         },
+        "custom_liquid_NgExzT": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<button type=\"button\" class=\"button custom-buy-now\" style=\"width:100%;margin-top:10px;\">\n  Buy it now\n</button>\n\n<script>\n(function () {\n  var btn = document.currentScript.previousElementSibling;\n  btn.addEventListener('click', function () {\n    // Grab the currently selected variant + quantity from the product form\n    var idInput = document.querySelector('form[action$=\"/cart/add\"] [name=\"id\"], product-form [name=\"id\"]');\n    var qtyInput = document.querySelector('.quantity__input, [name=\"quantity\"]');\n    var variantId = idInput ? idInput.value : null;\n    var qty = qtyInput ? qtyInput.value : 1;\n    if (!variantId) { alert('Please select your options first.'); return; }\n\n    // Add to cart, then redirect straight to checkout\n    var f = document.createElement('form');\n    f.method = 'post';\n    f.action = '/cart/add';\n    f.style.display = 'none';\n    [['id', variantId], ['quantity', qty], ['return_to', '/checkout']].forEach(function (p) {\n      var i = document.createElement('input');\n      i.type = 'hidden'; i.name = p[0]; i.value = p[1];\n      f.appendChild(i);\n    });\n    document.body.appendChild(f);\n    f.submit();\n  });\n})();\n</script>"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -67,6 +73,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "custom_liquid_NgExzT",
         "description",
         "d41186a0-b170-43db-ac2f-5ba91ee185e8"
       ],
