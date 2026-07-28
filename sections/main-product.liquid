@@ -416,13 +416,36 @@
                   <span class="product-form__error-message"></span>
                 </div>
 
+                {%- liquid
+                  # A custom_liquid block elsewhere in this section can supply its own
+                  # filled "Buy it now" button (keyed on the custom-buy-now class). When
+                  # either that or the dynamic checkout button is present, the add to cart
+                  # button steps down to the outline style so only one button reads as primary.
+                  assign show_payment_button = false
+                  if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty
+                    assign show_payment_button = true
+                  endif
+
+                  assign has_custom_buy_now = false
+                  for sibling in section.blocks
+                    if sibling.type == 'custom_liquid' and sibling.settings.custom_liquid contains 'custom-buy-now'
+                      assign has_custom_buy_now = true
+                    endif
+                  endfor
+
+                  assign demote_add_to_cart = false
+                  if show_payment_button or has_custom_buy_now
+                    assign demote_add_to_cart = true
+                  endif
+                -%}
+
                 {%- form 'product', product, data-productid: product.id, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                   <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.selected_or_first_available_variant.id }}" disabled>
                   <div class="product-form__buttons">
                     <button
                       type="submit"
                       name="add"
-                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                      class="product-form__submit button button--full-width {% if demote_add_to_cart %}button--secondary{% else %}button--primary{% endif %}"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
                         <span>
