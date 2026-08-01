@@ -118,6 +118,7 @@
         "blocks": {
           "announcement_BBxchL": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "☀️ OUR SUMMER SALE IS HERE! 20% off sitewide! No code needed! ☀️⛱️",
               "color_scheme": "accent-2",
