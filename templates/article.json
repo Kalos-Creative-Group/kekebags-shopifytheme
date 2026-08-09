@@ -27,7 +27,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Keke",
-            "button_link": "shopify://collections/the-keke-bag-1"
+            "button_link": "shopify://collections/the-keke-bag-legacy"
           }
         },
         "share": {
