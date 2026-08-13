@@ -59,14 +59,31 @@
   }
 }
 
-/* Hide review widgets with fewer than 10 reviews.
-   Products exempt from this rule are listed in the :not() selectors below. The
-   value is the Shopify product id, the same one rendered as data-id in
-   snippets/judgeme-rating.liquid. To exempt another product, add it to both
-   lists: :not([data-id="6732846399511"], [data-id="OTHER_ID"]) */
+/* Hide review widgets and rating badges with fewer than 10 reviews.
 
-.jdgm-widget:not([data-id="6732846399511"]),
-.shopify-block:has(.jdgm-rev-widg:not([data-id="6732846399511"])) {
+   Judge.me is inconsistent about which element in the widget carries which
+   attribute: data-id / data-product-id sit on the outer container, while
+   data-number-of-reviews sits on an inner element. So both the review count
+   and the exempt product id are matched on the element itself OR on any
+   descendant, rather than assuming a fixed structure.
+
+   To exempt another product, add its product id to both :not() lists. */
+
+.jdgm-widget:not(
+    [data-id="6732846399511"],
+    [data-product-id="6732846399511"],
+    :has([data-id="6732846399511"], [data-product-id="6732846399511"])
+  ),
+.shopify-block:not(
+    :has([data-id="6732846399511"], [data-product-id="6732846399511"])
+  ) {
+  &:is(
+      [data-number-of-reviews="0"], [data-number-of-reviews="1"],
+      [data-number-of-reviews="2"], [data-number-of-reviews="3"],
+      [data-number-of-reviews="4"], [data-number-of-reviews="5"],
+      [data-number-of-reviews="6"], [data-number-of-reviews="7"],
+      [data-number-of-reviews="8"], [data-number-of-reviews="9"]
+    ),
   &:has(
       [data-number-of-reviews="0"], [data-number-of-reviews="1"],
       [data-number-of-reviews="2"], [data-number-of-reviews="3"],
