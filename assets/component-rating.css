@@ -59,38 +59,25 @@
   }
 }
 
-/* Hide review widgets and rating badges with fewer than 10 reviews.
-
-   Judge.me is inconsistent about which element in the widget carries which
-   attribute: data-id / data-product-id sit on the outer container, while
-   data-number-of-reviews sits on an inner element. So both the review count
-   and the exempt product id are matched on the element itself OR on any
-   descendant, rather than assuming a fixed structure.
-
-   To exempt another product, add its product id to both :not() lists. */
-
-.jdgm-widget:not(
-    [data-id="6732846399511"],
-    [data-product-id="6732846399511"],
-    :has([data-id="6732846399511"], [data-product-id="6732846399511"])
-  ),
-.shopify-block:not(
-    :has([data-id="6732846399511"], [data-product-id="6732846399511"])
-  ) {
-  &:is(
-      [data-number-of-reviews="0"], [data-number-of-reviews="1"],
-      [data-number-of-reviews="2"], [data-number-of-reviews="3"],
-      [data-number-of-reviews="4"], [data-number-of-reviews="5"],
-      [data-number-of-reviews="6"], [data-number-of-reviews="7"],
-      [data-number-of-reviews="8"], [data-number-of-reviews="9"]
-    ),
-  &:has(
-      [data-number-of-reviews="0"], [data-number-of-reviews="1"],
-      [data-number-of-reviews="2"], [data-number-of-reviews="3"],
-      [data-number-of-reviews="4"], [data-number-of-reviews="5"],
-      [data-number-of-reviews="6"], [data-number-of-reviews="7"],
-      [data-number-of-reviews="8"], [data-number-of-reviews="9"]
-    ) {
-    display: none !important;
-  }
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="0"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="1"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="2"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="3"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="4"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="5"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="6"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="7"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="8"]),
+.jdgm-widget:not([data-product-id="6732846399511"]):has([data-number-of-reviews="9"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="0"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="1"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="2"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="3"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="4"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="5"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="6"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="7"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="8"]),
+.shopify-block:has(.jdgm-widget:not([data-product-id="6732846399511"]) .jdgm-rev-widg[data-number-of-reviews="9"]) {
+  display: none !important;
 }
