@@ -59,25 +59,21 @@
   }
 }
 
-.jdgm-widget:has([data-number-of-reviews="0"]),
-.jdgm-widget:has([data-number-of-reviews="1"]),
-.jdgm-widget:has([data-number-of-reviews="2"]),
-.jdgm-widget:has([data-number-of-reviews="3"]),
-.jdgm-widget:has([data-number-of-reviews="4"]),
-.jdgm-widget:has([data-number-of-reviews="5"]),
-.jdgm-widget:has([data-number-of-reviews="6"]),
-.jdgm-widget:has([data-number-of-reviews="7"]),
-.jdgm-widget:has([data-number-of-reviews="8"]),
-.jdgm-widget:has([data-number-of-reviews="9"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="0"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="1"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="2"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="3"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="4"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="5"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="6"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="7"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="8"]),
-.shopify-block:has(.jdgm-rev-widg[data-number-of-reviews="9"]) {
-  display: none !important;
+/* Hide review widgets with fewer than 10 reviews.
+   Products exempt from this rule are listed in the :not() selectors below. The
+   value is the Shopify product id, the same one rendered as data-id in
+   snippets/judgeme-rating.liquid. To exempt another product, add it to both
+   lists: :not([data-id="6732846399511"], [data-id="OTHER_ID"]) */
+
+.jdgm-widget:not([data-id="6732846399511"]),
+.shopify-block:has(.jdgm-rev-widg:not([data-id="6732846399511"])) {
+  &:has(
+      [data-number-of-reviews="0"], [data-number-of-reviews="1"],
+      [data-number-of-reviews="2"], [data-number-of-reviews="3"],
+      [data-number-of-reviews="4"], [data-number-of-reviews="5"],
+      [data-number-of-reviews="6"], [data-number-of-reviews="7"],
+      [data-number-of-reviews="8"], [data-number-of-reviews="9"]
+    ) {
+    display: none !important;
+  }
 }
