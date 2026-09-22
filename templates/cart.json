@@ -1,1 +1,61 @@
-{"sections":{"cart-items":{"type":"main-cart-items","settings":{"show_vendor":false,"padding_top":36,"padding_bottom":36}},"cart-footer":{"type":"main-cart-footer","blocks":{"subtotal":{"type":"subtotal","settings":{}},"buttons":{"type":"buttons","settings":{}}},"block_order":["subtotal","buttons"],"settings":{"show_cart_note":false}}},"order":["cart-items","cart-footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "show_vendor": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "settings": {
+        "show_cart_note": false
+      }
+    },
+    "17900881881234854b": {
+      "type": "apps",
+      "blocks": {
+        "bisell_upsell_bf_upsell_widget_icuc_ieL7jL": {
+          "type": "shopify://apps/bisell-upsell/blocks/bf-upsell-widget-icuc/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "bisell_upsell_bf_upsell_widget_icuc_ieL7jL"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "17900881881234854b"
+  ]
+}
