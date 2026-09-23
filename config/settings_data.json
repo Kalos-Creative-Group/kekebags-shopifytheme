@@ -116,6 +116,14 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_ehhKjN": {
+            "type": "announcement",
+            "settings": {
+              "text": "Limited-Time KangaBOO Pouch Is Here!",
+              "color_scheme": "accent-1",
+              "link": "https://kekekid.com/products/limited-edition-halloween-pouch"
+            }
+          },
           "announcement_BBxchL": {
             "type": "announcement",
             "disabled": true,
@@ -154,6 +162,7 @@
           }
         },
         "block_order": [
+          "announcement_ehhKjN",
           "announcement_BBxchL",
           "announcement_HhpYnJ",
           "announcement-bar-0",
