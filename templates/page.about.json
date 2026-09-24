@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {}
+    },
     "title": {
       "type": "main-title",
       "settings": {
@@ -54,7 +58,7 @@
           "settings": {
             "image": "shopify://shop_images/keke-34.jpg",
             "title": "Intentionally Curated",
-            "text": "<p>Our Keke bag arrives with 4 activity filled pouches that focus on different emerging skills (which are crucial for development in young kiddos).</p>",
+            "text": "<p>Our Keke Bag® arrives with 4 activity filled pouches that focus on different emerging skills (which are crucial for development in young kiddos).</p>",
             "link_label": "",
             "link": "https://kekekid.com/products/past-pouch-subscriptions"
           }
@@ -89,10 +93,6 @@
         "padding_top": 36,
         "padding_bottom": 80
       }
-    },
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
