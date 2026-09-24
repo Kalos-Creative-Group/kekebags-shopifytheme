@@ -116,7 +116,7 @@
           "type": "column",
           "settings": {
             "title": "Everything in One Place",
-            "text": "<p>- The Keke bag was designed to be paired with our pouch subscription to make your life easy!</p><p>- <a href=\"/products/pouch-subscription\" target=\"_blank\" title=\"Pouch Subscription\">Click here to add on our pouch subscription</a> so new pouches are delivered to your door every 12 weeks!</p>",
+            "text": "<p>- The Keke Bag® was designed to be paired with our pouch subscription to make your life easy!</p><p>- <a href=\"/products/pouch-subscription\" target=\"_blank\" title=\"Pouch Subscription\">Click here to add on our pouch subscription</a> so new pouches are delivered to your door every 12 weeks!</p>",
             "link_label": "",
             "link": ""
           }
@@ -138,7 +138,7 @@
         "d730d4c7-7066-41c6-a69b-bcc08ddcbf92"
       ],
       "settings": {
-        "title": "What Makes a Keke Bag So Special?",
+        "title": "What Makes a Keke Bag® So Special?",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
