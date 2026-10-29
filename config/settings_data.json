@@ -118,6 +118,7 @@
         "blocks": {
           "announcement_ehhKjN": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Limited-Time KangaBOO Pouch Is Here!",
               "color_scheme": "accent-1",
